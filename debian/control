@@ -9,7 +9,42 @@ Homepage: http://code.google.com/p/gerrit/
 Package: gerrit2-installer
 Section: contrib/misc
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: adduser, wget | curl
+Depends: java7-runtime-headless, git-core, ${misc:Depends}
+Description: Installer for Gerrit2
+ Gerrit is web based code review and project management for Git based
+ projects.
+ .
+ Gerrit is a web based code review system, facilitating online code
+ reviews for projects using the Git version control system.
+ .
+ Gerrit makes reviews easier by showing changes in a side-by-side
+ display, and allowing inline comments to be added by any reviewer.
+ .
+ Gerrit simplifies Git based project maintainership by permitting any
+ authorized user to submit changes to the master Git repository,
+ rather than requiring all approved changes to be merged in by hand by
+ the project maintainer. This functionality enables a more centralized
+ usage of Git. Gerrit is a web based code review system, facilitating
+ online code reviews for projects using the Git version control
+ system.
+ .
+ Gerrit makes reviews easier by showing changes in a side-by-side
+ display, and allowing inline comments to be added by any reviewer.
+ .
+ Gerrit simplifies Git based project maintainership by permitting any
+ authorized user to submit changes to the master Git repository,
+ rather than requiring all approved changes to be merged in by hand by
+ the project maintainer. This functionality enables a more centralized
+ usage of Git.
+ .
+ Description taken from Gerrit homepage:
+ http://code.google.com/p/gerrit/
+
+Package: gerrit2
+Section: contrib/misc
+Architecture: all
+Depends: java7-runtime-headless, git-core, gerrit2-installer, ${misc:Depends}
 Description: Web based code review and project management for Git based projects
  Gerrit is a web based code review system, facilitating online code
  reviews for projects using the Git version control system.
